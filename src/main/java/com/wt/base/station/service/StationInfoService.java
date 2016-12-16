@@ -5,6 +5,8 @@ import com.wt.base.station.persist.entity.StationInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * <p>
  * 修改历史:											<br>
@@ -25,6 +27,10 @@ public class StationInfoService {
 
     public int insert(StationInfo stationInfo) {
         return stationInfoDao.insert(stationInfo);
+    }
+
+    public int insert(Map<String,Object> paramMap) {
+        return stationInfoDao.insert(paramMap);
     }
 
 }

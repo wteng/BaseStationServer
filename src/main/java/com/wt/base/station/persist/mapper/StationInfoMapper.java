@@ -10,5 +10,6 @@ import java.util.Map;
 public interface StationInfoMapper {
 
     int insert(StationInfo stationInfo);
+    int insert(Map<String,Object> paramMap);
 
 }

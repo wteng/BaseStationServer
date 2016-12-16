@@ -7,30 +7,32 @@
         <!--<result column="hotel_id" jdbcType="VARCHAR" property="hotelId" />-->
 
     <!--</resultMap>-->
+
+
     <!--<sql id="Base_Column_List">-->
         <!--id-->
     <!--</sql>-->
 
 
 
-    <!--<select id="selectByCondition" parameterType="java.util.Map"-->
-            <!--resultMap="BaseResultMap">-->
-        <!--select-->
-        <!--<include refid="Base_Column_List" />-->
-        <!--from ${tableName}-->
-        <!--<where>-->
-            <!--<if test="hotelId !=null">-->
-                <!--hotel_id = #{hotelId,jdbcType=VARCHAR}-->
-            <!--</if>-->
-            <!--<if test="city !=null">-->
-                <!--AND city = #{city,jdbcType=VARCHAR}-->
-            <!--</if>-->
-            <!--AND TO_DAYS(sync_date)=TO_DAYS(NOW())-->
-        <!--</where>-->
-        <!--<if test="start != null and limit != null">-->
-            <!--order by id desc LIMIT #{start},#{limit}-->
-        <!--</if>-->
-    <!--</select>-->
+    <select id="selectByCondition" parameterType="java.util.Map"
+            resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from ${tableName}
+        <where>
+            <if test="hotelId !=null">
+                hotel_id = #{hotelId,jdbcType=VARCHAR}
+            </if>
+            <if test="city !=null">
+                AND city = #{city,jdbcType=VARCHAR}
+            </if>
+            AND TO_DAYS(sync_date)=TO_DAYS(NOW())
+        </where>
+        <if test="start != null and limit != null">
+            order by id desc LIMIT #{start},#{limit}
+        </if>
+    </select>
 
 
 
@@ -45,6 +47,7 @@
         floor, tianxian_model,
         RRU_location,
         have_cnet_device,
+        cnet_device_model,
         has_farther,
         room_share, has_air_conditioning,
         has_battery,
@@ -68,6 +71,7 @@
             #{tianxianModel,jdbcType=VARCHAR},
             #{RRULocation,jdbcType=VARCHAR},
             #{haveCnetDevice,jdbcType=VARCHAR},
+            #{cNetDeviceModel,jdbcType=VARCHAR},
             #{hasFarther,jdbcType=VARCHAR},
             #{roomShare,jdbcType=VARCHAR},
             #{hasAirConditioning,jdbcType=VARCHAR},
@@ -75,6 +79,52 @@
             #{question,jdbcType=VARCHAR},
             #{picPath,jdbcType=VARCHAR}
             )
+
+    </insert>
+
+    <insert id="insertMap" parameterType="java.util.Map">
+        insert into base_station_info
+        (id, name, address_qu,
+        address, latitude, longtitude,
+        platform_number, tianxian_platform,
+        fangweijiao,
+        jixie_xiaqingjiao, dianzi_xiaqingjiao, station_height,
+        beautiful_tianxian, tianxian_type,
+        floor, tianxian_model,
+        RRU_location,
+        have_cnet_device,
+        cnet_device_model,
+        has_farther,
+        room_share, has_air_conditioning,
+        has_battery,
+        question, pic_path)
+        values
+        (#{id,jdbcType=INTEGER},
+        #{name,jdbcType=VARCHAR},
+        #{addressQu,jdbcType=VARCHAR},
+        #{address,jdbcType=VARCHAR},
+        #{latitude,jdbcType=VARCHAR},
+        #{longtitude,jdbcType=VARCHAR},
+        #{platformNumber,jdbcType=INTEGER},
+        #{tianxianPlatform,jdbcType=VARCHAR},
+        #{fangweijiao,jdbcType=VARCHAR},
+        #{jixieXiaqingjiao,jdbcType=VARCHAR},
+        #{dianziXiaqingjiao,jdbcType=VARCHAR},
+        #{stationHeight,jdbcType=VARCHAR},
+        #{beautifulTianxian,jdbcType=VARCHAR},
+        #{tianxianType,jdbcType=VARCHAR},
+        #{floor,jdbcType=VARCHAR},
+        #{tianxianModel,jdbcType=VARCHAR},
+        #{RRULocation,jdbcType=VARCHAR},
+        #{haveCnetDevice,jdbcType=VARCHAR},
+        #{cNetDeviceModel,jdbcType=VARCHAR},
+        #{hasFarther,jdbcType=VARCHAR},
+        #{roomShare,jdbcType=VARCHAR},
+        #{hasAirConditioning,jdbcType=VARCHAR},
+        #{hasBattery,jdbcType=VARCHAR},
+        #{question,jdbcType=VARCHAR},
+        #{picPath,jdbcType=VARCHAR}
+        )
 
     </insert>
 

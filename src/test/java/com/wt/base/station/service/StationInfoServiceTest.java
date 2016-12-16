@@ -1,5 +1,6 @@
 package com.wt.base.station.service;
 
+import com.google.common.collect.Maps;
 import com.wt.base.station.persist.entity.StationInfo;
 import junit.framework.Assert;
 import org.junit.Test;
@@ -7,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -29,9 +32,11 @@ public class StationInfoServiceTest {
 
     @Test
     public void testInsert() {
-        StationInfo stationInfo = new StationInfo();
-        stationInfo.setAddress("aaaa");
-        int insertResult = stationInfoService.insert(stationInfo);
+//        StationInfo stationInfo = new StationInfo();
+//        stationInfo.setAddress("aaaa");
+        Map<String,Object> paramMap = Maps.newLinkedHashMap();
+        paramMap.put("name","jizhan1");
+        int insertResult = stationInfoService.insert(paramMap);
         Assert.assertEquals(1,insertResult);
     }
 

@@ -1,5 +1,7 @@
 package com.wt.base.station.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Maps;
 import com.wt.base.station.common.ErrorCodeConstant;
 import com.wt.base.station.persist.entity.StationInfo;
 import com.wt.base.station.service.StationInfoService;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URLDecoder;
+import java.util.Enumeration;
+import java.util.Map;
 
 /**
  * <p>
@@ -35,21 +39,38 @@ public class StationInfoController {
     public String addInfo(HttpServletRequest request){
         BaseResponse baseResponse = new BaseResponse();
         try {
-            String name = request.getParameter("name");
-            String addressQu = request.getParameter("addressQu");
-            String address = request.getParameter("address");
-            String latitude = request.getParameter("latitude");
-            String longtitude = request.getParameter("longtitude");
+//            String name = request.getParameter("name");
+//            String addressQu = request.getParameter("addressQu");
+//            String address = request.getParameter("address");
+//            String latitude = request.getParameter("latitude");
+//            String longtitude = request.getParameter("longtitude");
+//            String platformNumber = request.getParameter("platformNumber");
+//            String tianxianPlatform = request.getParameter("tianxianPlatform");
+//            String fangweijiao = request.getParameter("fangweijiao");
+//            String jixieXiaqingjiao = request.getParameter("jixieXiaqingjiao");
+//            String dianziXiaqingjiao = request.getParameter("dianziXiaqingjiao");
+//            String stationHeight = request.getParameter("stationHeight");
+//            String beautifulTianxian = request.getParameter("beautifulTianxian");
+//            String tianxianType = request.getParameter("tianxianType");
+//            String floor = request.getParameter("floor");
+//            String tianxianModel = request.getParameter("tianxianModel");
+//            String RRULocation = request.getParameter("RRULocation");
 
-            StationInfo stationInfo = new StationInfo();
-            stationInfo.setName(name);
-            stationInfo.setAddressQu(addressQu);
-            stationInfo.setAddress(address);
-            stationInfo.setLatitude(latitude);
-            stationInfo.setLongtitude(longtitude);
+//            StationInfo stationInfo = new StationInfo();
+//            stationInfo.setName(name);
+//            stationInfo.setAddressQu(addressQu);
+//            stationInfo.setAddress(address);
+//            stationInfo.setLatitude(latitude);
+//            stationInfo.setLongtitude(longtitude);
 
+            Map<String,Object> paramMap = Maps.newHashMap();
+            Enumeration<String> enumeration = request.getParameterNames();
+            while (enumeration.hasMoreElements()) {
+                String keyName = enumeration.nextElement();
+                paramMap.put(keyName,request.getParameter(keyName));
+            }
 
-            stationInfoService.insert(stationInfo);
+            stationInfoService.insert(paramMap);
         } catch (Exception e) {
             baseResponse.setRetcode(ErrorCodeConstant.EXCEPTION_CODE);
             baseResponse.setRetdesc(e.toString());

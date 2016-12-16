@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import java.util.Map;
+
 /**
  * <p>
  * 修改历史:											<br>
@@ -27,6 +29,10 @@ public class StationInfoDao implements IStationInfoDao {
 
     public int insert(StationInfo stationInfo) {
         return stationInfoMapper.insert(stationInfo);
+    }
+
+    public int insert(Map<String, Object> paramMap) {
+        return stationInfoMapper.insert(paramMap);
     }
 
 
