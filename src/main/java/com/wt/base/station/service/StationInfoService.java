@@ -1,10 +1,13 @@
 package com.wt.base.station.service;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.wt.base.station.persist.dao.impl.StationInfoDao;
 import com.wt.base.station.persist.entity.StationInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +34,24 @@ public class StationInfoService {
 
     public int insert(Map<String,Object> paramMap) {
         return stationInfoDao.insert(paramMap);
+    }
+
+    public StationInfo getStationInfoByName(String stationName) {
+        Map<String,Object> paramMap = Maps.newHashMap();
+        paramMap.put("stationName",stationName);
+
+        List<StationInfo> stationInfoList = stationInfoDao.selectByCondition(paramMap);
+        if (stationInfoList != null && !stationInfoList.isEmpty()) {
+            return stationInfoList.get(0);
+        }
+
+        return null;
+    }
+
+    public List<StationInfo> getStationInfo() {
+        Map<String,Object> paramMap = Maps.newHashMap();
+
+        return stationInfoDao.selectByCondition(paramMap);
     }
 
 }

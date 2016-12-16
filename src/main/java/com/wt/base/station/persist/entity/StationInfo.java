@@ -15,7 +15,7 @@ package com.wt.base.station.persist.entity;
 public class StationInfo {
 
     int id;
-    String name;
+    String stationName;
     String addressQu;
     String address;
     String latitude;
@@ -48,12 +48,12 @@ public class StationInfo {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getStationName() {
+        return stationName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStationName(String stationName) {
+        this.stationName = stationName;
     }
 
     public String getAddressQu() {

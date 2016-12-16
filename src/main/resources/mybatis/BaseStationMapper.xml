@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wt.base.station.persist.mapper.StationInfoMapper">
-    <!--<resultMap id="BaseResultMap"-->
-               <!--type="com.elong.hotel.mapping.persist.entity.PriceInfo">-->
-        <!--<id column="id" jdbcType="INTEGER" property="id" />-->
-        <!--<result column="hotel_id" jdbcType="VARCHAR" property="hotelId" />-->
+    <resultMap id="BaseResultMap"
+               type="com.wt.base.station.persist.entity.StationInfo">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+        <result column="address_qu" jdbcType="VARCHAR" property="addressQu" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+        <result column="longtitude" jdbcType="VARCHAR" property="longtitude" />
+        <result column="platform_number" jdbcType="INTEGER" property="platformNumber" />
+        <result column="tianxian_platform" jdbcType="VARCHAR" property="tianxianPlatform" />
+        <result column="fangweijiao" jdbcType="VARCHAR" property="fangweijiao" />
+        <result column="jixie_xiaqingjiao" jdbcType="VARCHAR" property="jixieXiaqingjiao" />
+        <result column="dianzi_xiaqingjiao" jdbcType="VARCHAR" property="dianziXiaqingjiao" />
+        <result column="station_height" jdbcType="VARCHAR" property="stationHeight" />
+        <result column="beautiful_tianxian" jdbcType="VARCHAR" property="beautifulTianxian" />
+        <result column="tianxian_type" jdbcType="VARCHAR" property="tianxianType" />
+        <result column="floor" jdbcType="VARCHAR" property="floor" />
+        <result column="tianxian_model" jdbcType="VARCHAR" property="tianxianModel" />
+        <result column="RRU_location" jdbcType="VARCHAR" property="RRULocation" />
+        <result column="have_cnet_device" jdbcType="VARCHAR" property="haveCnetDevice" />
+        <result column="cnet_device_model" jdbcType="VARCHAR" property="cNetDeviceModel" />
+        <result column="has_farther" jdbcType="VARCHAR" property="hasFarther" />
+        <result column="room_share" jdbcType="VARCHAR" property="roomShare" />
+        <result column="has_air_conditioning" jdbcType="VARCHAR" property="hasAirConditioning" />
+        <result column="has_battery" jdbcType="VARCHAR" property="hasBattery" />
+        <result column="question" jdbcType="VARCHAR" property="question" />
+        <result column="pic_path" jdbcType="VARCHAR" property="picPath" />
+    </resultMap>
 
-    <!--</resultMap>-->
 
-
-    <!--<sql id="Base_Column_List">-->
-        <!--id-->
-    <!--</sql>-->
+    <sql id="Base_Column_List">
+        id, station_name, address_qu,
+        address, latitude, longtitude,
+        platform_number, tianxian_platform,
+        fangweijiao,
+        jixie_xiaqingjiao, dianzi_xiaqingjiao, station_height,
+        beautiful_tianxian, tianxian_type,
+        floor, tianxian_model,
+        RRU_location,
+        have_cnet_device,
+        cnet_device_model,
+        has_farther,
+        room_share, has_air_conditioning,
+        has_battery,
+        question, pic_path
+    </sql>
 
 
 
@@ -19,15 +54,11 @@
             resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />
-        from ${tableName}
+        from base_station_info
         <where>
-            <if test="hotelId !=null">
-                hotel_id = #{hotelId,jdbcType=VARCHAR}
+            <if test="stationName !=null">
+                station_name = #{stationName,jdbcType=VARCHAR}
             </if>
-            <if test="city !=null">
-                AND city = #{city,jdbcType=VARCHAR}
-            </if>
-            AND TO_DAYS(sync_date)=TO_DAYS(NOW())
         </where>
         <if test="start != null and limit != null">
             order by id desc LIMIT #{start},#{limit}
@@ -38,7 +69,7 @@
 
     <insert id="insert" parameterType="com.wt.base.station.persist.entity.StationInfo">
         insert into base_station_info
-        (id, name, address_qu,
+        (id, station_name, address_qu,
         address, latitude, longtitude,
         platform_number, tianxian_platform,
         fangweijiao,
@@ -84,7 +115,7 @@
 
     <insert id="insertMap" parameterType="java.util.Map">
         insert into base_station_info
-        (id, name, address_qu,
+        (id, station_name, address_qu,
         address, latitude, longtitude,
         platform_number, tianxian_platform,
         fangweijiao,

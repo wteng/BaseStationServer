@@ -9,6 +9,7 @@ import com.wt.base.station.vo.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,30 +40,6 @@ public class StationInfoController {
     public String addInfo(HttpServletRequest request){
         BaseResponse baseResponse = new BaseResponse();
         try {
-//            String name = request.getParameter("name");
-//            String addressQu = request.getParameter("addressQu");
-//            String address = request.getParameter("address");
-//            String latitude = request.getParameter("latitude");
-//            String longtitude = request.getParameter("longtitude");
-//            String platformNumber = request.getParameter("platformNumber");
-//            String tianxianPlatform = request.getParameter("tianxianPlatform");
-//            String fangweijiao = request.getParameter("fangweijiao");
-//            String jixieXiaqingjiao = request.getParameter("jixieXiaqingjiao");
-//            String dianziXiaqingjiao = request.getParameter("dianziXiaqingjiao");
-//            String stationHeight = request.getParameter("stationHeight");
-//            String beautifulTianxian = request.getParameter("beautifulTianxian");
-//            String tianxianType = request.getParameter("tianxianType");
-//            String floor = request.getParameter("floor");
-//            String tianxianModel = request.getParameter("tianxianModel");
-//            String RRULocation = request.getParameter("RRULocation");
-
-//            StationInfo stationInfo = new StationInfo();
-//            stationInfo.setName(name);
-//            stationInfo.setAddressQu(addressQu);
-//            stationInfo.setAddress(address);
-//            stationInfo.setLatitude(latitude);
-//            stationInfo.setLongtitude(longtitude);
-
             Map<String,Object> paramMap = Maps.newHashMap();
             Enumeration<String> enumeration = request.getParameterNames();
             while (enumeration.hasMoreElements()) {
@@ -72,6 +49,21 @@ public class StationInfoController {
 
             stationInfoService.insert(paramMap);
         } catch (Exception e) {
+            baseResponse.setRetcode(ErrorCodeConstant.EXCEPTION_CODE);
+            baseResponse.setRetdesc(e.toString());
+        }
+
+        return baseResponse.toString();
+    }
+
+    @RequestMapping("getStationInfoByName")
+    @ResponseBody
+    public String getStationInfoByName(@RequestParam String stationName) {
+        BaseResponse baseResponse = new BaseResponse();
+        try {
+            StationInfo stationInfo = stationInfoService.getStationInfoByName(stationName);
+            baseResponse.setBody(stationInfo);
+        }catch (Exception e) {
             baseResponse.setRetcode(ErrorCodeConstant.EXCEPTION_CODE);
             baseResponse.setRetdesc(e.toString());
         }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,6 +34,10 @@ public class StationInfoDao implements IStationInfoDao {
 
     public int insert(Map<String, Object> paramMap) {
         return stationInfoMapper.insert(paramMap);
+    }
+
+    public List<StationInfo> selectByCondition(Map<String, Object> paramMap) {
+        return stationInfoMapper.selectByCondition(paramMap);
     }
 
 
