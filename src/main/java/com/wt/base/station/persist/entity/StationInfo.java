@@ -26,17 +26,17 @@ public class StationInfo {
     String jixieXiaqingjiao;
     String dianziXiaqingjiao;
     String stationHeight;
-    String beautifulTianxian;
+    boolean beautifulTianxian;
     String tianxianType;
     String floor;
     String tianxianModel;
     String RRULocation;
-    String haveCnetDevice;
+    boolean haveCnetDevice;
     String cNetDeviceModel;
-    String hasFarther;
-    String roomShare;
-    String hasAirConditioning;
-    String hasBattery;
+    boolean hasFarther;
+    boolean roomShare;
+    boolean hasAirConditioning;
+    boolean hasBattery;
     String question;
     String picPath;
 
@@ -136,12 +136,52 @@ public class StationInfo {
         this.stationHeight = stationHeight;
     }
 
-    public String getBeautifulTianxian() {
+    public boolean isBeautifulTianxian() {
         return beautifulTianxian;
     }
 
-    public void setBeautifulTianxian(String beautifulTianxian) {
+    public void setBeautifulTianxian(boolean beautifulTianxian) {
         this.beautifulTianxian = beautifulTianxian;
+    }
+
+    public boolean isHaveCnetDevice() {
+        return haveCnetDevice;
+    }
+
+    public void setHaveCnetDevice(boolean haveCnetDevice) {
+        this.haveCnetDevice = haveCnetDevice;
+    }
+
+    public boolean isHasFarther() {
+        return hasFarther;
+    }
+
+    public void setHasFarther(boolean hasFarther) {
+        this.hasFarther = hasFarther;
+    }
+
+    public boolean isRoomShare() {
+        return roomShare;
+    }
+
+    public void setRoomShare(boolean roomShare) {
+        this.roomShare = roomShare;
+    }
+
+    public boolean isHasAirConditioning() {
+        return hasAirConditioning;
+    }
+
+    public void setHasAirConditioning(boolean hasAirConditioning) {
+        this.hasAirConditioning = hasAirConditioning;
+    }
+
+    public boolean isHasBattery() {
+        return hasBattery;
+    }
+
+    public void setHasBattery(boolean hasBattery) {
+        this.hasBattery = hasBattery;
     }
 
     public String getTianxianType() {
@@ -176,13 +216,6 @@ public class StationInfo {
         this.RRULocation = RRULocation;
     }
 
-    public String getHaveCnetDevice() {
-        return haveCnetDevice;
-    }
-
-    public void setHaveCnetDevice(String haveCnetDevice) {
-        this.haveCnetDevice = haveCnetDevice;
-    }
 
     public String getcNetDeviceModel() {
         return cNetDeviceModel;
@@ -192,37 +225,6 @@ public class StationInfo {
         this.cNetDeviceModel = cNetDeviceModel;
     }
 
-    public String getHasFarther() {
-        return hasFarther;
-    }
-
-    public void setHasFarther(String hasFarther) {
-        this.hasFarther = hasFarther;
-    }
-
-    public String getRoomShare() {
-        return roomShare;
-    }
-
-    public void setRoomShare(String roomShare) {
-        this.roomShare = roomShare;
-    }
-
-    public String getHasAirConditioning() {
-        return hasAirConditioning;
-    }
-
-    public void setHasAirConditioning(String hasAirConditioning) {
-        this.hasAirConditioning = hasAirConditioning;
-    }
-
-    public String getHasBattery() {
-        return hasBattery;
-    }
-
-    public void setHasBattery(String hasBattery) {
-        this.hasBattery = hasBattery;
-    }
 
     public String getQuestion() {
         return question;
