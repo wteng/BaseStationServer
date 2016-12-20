@@ -85,7 +85,7 @@
         question, pic_path)
         values
         (#{id,jdbcType=INTEGER},
-            #{name,jdbcType=VARCHAR},
+            #{stationName,jdbcType=VARCHAR},
             #{addressQu,jdbcType=VARCHAR},
             #{address,jdbcType=VARCHAR},
             #{latitude,jdbcType=VARCHAR},
@@ -131,7 +131,7 @@
         question, pic_path)
         values
         (#{id,jdbcType=INTEGER},
-        #{name,jdbcType=VARCHAR},
+        #{stationName,jdbcType=VARCHAR},
         #{addressQu,jdbcType=VARCHAR},
         #{address,jdbcType=VARCHAR},
         #{latitude,jdbcType=VARCHAR},
