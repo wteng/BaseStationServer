@@ -11,7 +11,7 @@
  Target Server Version : 50635
  File Encoding         : utf-8
 
- Date: 12/20/2016 17:14:45 PM
+ Date: 12/21/2016 15:10:56 PM
 */
 
 SET NAMES utf8;
@@ -37,6 +37,7 @@ CREATE TABLE `base_station_info` (
   `beautiful_tianxian` tinyint(2) DEFAULT NULL,
   `tianxian_type` varchar(255) DEFAULT NULL,
   `floor` varchar(255) DEFAULT NULL,
+  `wireless_company` varchar(255) DEFAULT NULL,
   `tianxian_model` varchar(255) DEFAULT NULL,
   `RRU_location` varchar(255) DEFAULT NULL,
   `have_cnet_device` tinyint(2) DEFAULT NULL,
@@ -49,6 +50,6 @@ CREATE TABLE `base_station_info` (
   `pic_path` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_station_name` (`station_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;

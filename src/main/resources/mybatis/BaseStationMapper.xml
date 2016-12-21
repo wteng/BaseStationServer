@@ -18,6 +18,7 @@
         <result column="beautiful_tianxian" jdbcType="TINYINT" property="beautifulTianxian" />
         <result column="tianxian_type" jdbcType="VARCHAR" property="tianxianType" />
         <result column="floor" jdbcType="VARCHAR" property="floor" />
+        <result column="wireless_company" jdbcType="VARCHAR" property="wirelessCompany" />
         <result column="tianxian_model" jdbcType="VARCHAR" property="tianxianModel" />
         <result column="RRU_location" jdbcType="VARCHAR" property="RRULocation" />
         <result column="have_cnet_device" jdbcType="TINYINT" property="haveCnetDevice" />
@@ -38,7 +39,7 @@
         fangweijiao,
         jixie_xiaqingjiao, dianzi_xiaqingjiao, station_height,
         beautiful_tianxian, tianxian_type,
-        floor, tianxian_model,
+        floor, wireless_company, tianxian_model,
         RRU_location,
         have_cnet_device,
         cnet_device_model,
@@ -73,7 +74,7 @@
         fangweijiao,
         jixie_xiaqingjiao, dianzi_xiaqingjiao, station_height,
         beautiful_tianxian, tianxian_type,
-        floor, tianxian_model,
+        floor, wireless_company, tianxian_model,
         RRU_location,
         have_cnet_device,
         cnet_device_model,
@@ -97,6 +98,7 @@
         #{beautifulTianxian,jdbcType=TINYINT},
         #{tianxianType,jdbcType=VARCHAR},
         #{floor,jdbcType=VARCHAR},
+        #{wirelessCompany,jdbcType=VARCHAR},
         #{tianxianModel,jdbcType=VARCHAR},
         #{RRULocation,jdbcType=VARCHAR},
         #{haveCnetDevice,jdbcType=TINYINT},
@@ -119,7 +121,7 @@
         fangweijiao,
         jixie_xiaqingjiao, dianzi_xiaqingjiao, station_height,
         beautiful_tianxian, tianxian_type,
-        floor, tianxian_model,
+        floor, wireless_company, tianxian_model,
         RRU_location,
         have_cnet_device,
         cnet_device_model,
@@ -143,6 +145,7 @@
         #{beautifulTianxian,jdbcType=TINYINT},
         #{tianxianType,jdbcType=VARCHAR},
         #{floor,jdbcType=VARCHAR},
+        #{wirelessCompany,jdbcType=VARCHAR},
         #{tianxianModel,jdbcType=VARCHAR},
         #{RRULocation,jdbcType=VARCHAR},
         #{haveCnetDevice,jdbcType=TINYINT},

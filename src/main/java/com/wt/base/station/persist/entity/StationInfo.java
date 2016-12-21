@@ -29,6 +29,7 @@ public class StationInfo {
     boolean beautifulTianxian;
     String tianxianType;
     String floor;
+    String wirelessCompany;
     String tianxianModel;
     String RRULocation;
     boolean haveCnetDevice;
@@ -216,6 +217,13 @@ public class StationInfo {
         this.RRULocation = RRULocation;
     }
 
+    public String getWirelessCompany() {
+        return wirelessCompany;
+    }
+
+    public void setWirelessCompany(String wirelessCompany) {
+        this.wirelessCompany = wirelessCompany;
+    }
 
     public String getcNetDeviceModel() {
         return cNetDeviceModel;
