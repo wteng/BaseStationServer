@@ -22,7 +22,7 @@
         <result column="tianxian_model" jdbcType="VARCHAR" property="tianxianModel" />
         <result column="RRU_location" jdbcType="VARCHAR" property="RRULocation" />
         <result column="have_cnet_device" jdbcType="TINYINT" property="haveCnetDevice" />
-        <result column="cnet_device_model" jdbcType="VARCHAR" property="cNetDeviceModel" />
+        <result column="cnet_device_model" jdbcType="VARCHAR" property="cnetDeviceModel" />
         <result column="has_farther" jdbcType="TINYINT" property="hasFarther" />
         <result column="room_share" jdbcType="TINYINT" property="roomShare" />
         <result column="has_air_conditioning" jdbcType="TINYINT" property="hasAirConditioning" />
@@ -102,7 +102,7 @@
         #{tianxianModel,jdbcType=VARCHAR},
         #{RRULocation,jdbcType=VARCHAR},
         #{haveCnetDevice,jdbcType=TINYINT},
-        #{cNetDeviceModel,jdbcType=VARCHAR},
+        #{cnetDeviceModel,jdbcType=VARCHAR},
         #{hasFarther,jdbcType=TINYINT},
         #{roomShare,jdbcType=TINYINT},
         #{hasAirConditioning,jdbcType=TINYINT},
@@ -149,7 +149,7 @@
         #{tianxianModel,jdbcType=VARCHAR},
         #{RRULocation,jdbcType=VARCHAR},
         #{haveCnetDevice,jdbcType=TINYINT},
-        #{cNetDeviceModel,jdbcType=VARCHAR},
+        #{cnetDeviceModel,jdbcType=VARCHAR},
         #{hasFarther,jdbcType=TINYINT},
         #{roomShare,jdbcType=TINYINT},
         #{hasAirConditioning,jdbcType=TINYINT},

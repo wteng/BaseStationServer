@@ -33,7 +33,7 @@ public class StationInfo {
     String tianxianModel;
     String RRULocation;
     boolean haveCnetDevice;
-    String cNetDeviceModel;
+    String cnetDeviceModel;
     boolean hasFarther;
     boolean roomShare;
     boolean hasAirConditioning;
@@ -225,14 +225,13 @@ public class StationInfo {
         this.wirelessCompany = wirelessCompany;
     }
 
-    public String getcNetDeviceModel() {
-        return cNetDeviceModel;
+    public String getCnetDeviceModel() {
+        return cnetDeviceModel;
     }
 
-    public void setcNetDeviceModel(String cNetDeviceModel) {
-        this.cNetDeviceModel = cNetDeviceModel;
+    public void setCnetDeviceModel(String cnetDeviceModel) {
+        this.cnetDeviceModel = cnetDeviceModel;
     }
-
 
     public String getQuestion() {
         return question;
